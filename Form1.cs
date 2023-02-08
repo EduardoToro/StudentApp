@@ -1,30 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
 
 namespace EstudiantesApp
 {
     public partial class Form1 : Form
     {
+        private Estudiantes _estudiantes = new Estudiantes();
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void pictureBoxImage_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            _estudiantes.CargarImagenes(pictureBoxImage);
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

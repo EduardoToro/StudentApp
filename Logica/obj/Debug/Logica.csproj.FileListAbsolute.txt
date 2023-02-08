@@ -1,0 +1,6 @@
+C:\Users\Eduar\Documents\GitHub\StudentApp\Logica\bin\Debug\Logica.dll
+C:\Users\Eduar\Documents\GitHub\StudentApp\Logica\bin\Debug\Logica.pdb
+C:\Users\Eduar\Documents\GitHub\StudentApp\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\Eduar\Documents\GitHub\StudentApp\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\Eduar\Documents\GitHub\StudentApp\Logica\obj\Debug\Logica.dll
+C:\Users\Eduar\Documents\GitHub\StudentApp\Logica\obj\Debug\Logica.pdb

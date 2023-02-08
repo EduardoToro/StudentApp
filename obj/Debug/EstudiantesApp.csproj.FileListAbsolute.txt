@@ -9,3 +9,17 @@ C:\Users\Eduar\Documents\GitHub\Learn_CSharp\C#_Udemy\EstudiantesApp\obj\Debug\E
 C:\Users\Eduar\Documents\GitHub\Learn_CSharp\C#_Udemy\EstudiantesApp\obj\Debug\EstudiantesApp.exe
 C:\Users\Eduar\Documents\GitHub\Learn_CSharp\C#_Udemy\EstudiantesApp\obj\Debug\EstudiantesApp.pdb
 C:\Users\Eduar\Documents\GitHub\Learn_CSharp\C#_Udemy\EstudiantesApp\obj\Debug\EstudiantesApp.Form1.resources
+C:\Users\Eduar\Documents\GitHub\StudentApp\obj\Debug\EstudiantesApp.csproj.AssemblyReference.cache
+C:\Users\Eduar\Documents\GitHub\StudentApp\obj\Debug\EstudiantesApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Eduar\Documents\GitHub\StudentApp\obj\Debug\EstudiantesApp.Form1.resources
+C:\Users\Eduar\Documents\GitHub\StudentApp\obj\Debug\EstudiantesApp.Properties.Resources.resources
+C:\Users\Eduar\Documents\GitHub\StudentApp\obj\Debug\EstudiantesApp.csproj.GenerateResource.cache
+C:\Users\Eduar\Documents\GitHub\StudentApp\obj\Debug\EstudiantesApp.csproj.CoreCompileInputs.cache
+C:\Users\Eduar\Documents\GitHub\StudentApp\obj\Debug\EstudiantesApp.exe
+C:\Users\Eduar\Documents\GitHub\StudentApp\obj\Debug\EstudiantesApp.pdb
+C:\Users\Eduar\Documents\GitHub\StudentApp\bin\Debug\EstudiantesApp.exe.config
+C:\Users\Eduar\Documents\GitHub\StudentApp\bin\Debug\EstudiantesApp.exe
+C:\Users\Eduar\Documents\GitHub\StudentApp\bin\Debug\EstudiantesApp.pdb
+C:\Users\Eduar\Documents\GitHub\StudentApp\bin\Debug\Logica.dll
+C:\Users\Eduar\Documents\GitHub\StudentApp\bin\Debug\Logica.pdb
+C:\Users\Eduar\Documents\GitHub\StudentApp\obj\Debug\EstudiantesApp.csproj.CopyComplete

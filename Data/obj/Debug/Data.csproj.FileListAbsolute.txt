@@ -1,0 +1,6 @@
+C:\Users\Eduar\Documents\GitHub\StudentApp\Data\bin\Debug\Data.dll
+C:\Users\Eduar\Documents\GitHub\StudentApp\Data\bin\Debug\Data.pdb
+C:\Users\Eduar\Documents\GitHub\StudentApp\Data\obj\Debug\Data.csproj.AssemblyReference.cache
+C:\Users\Eduar\Documents\GitHub\StudentApp\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Eduar\Documents\GitHub\StudentApp\Data\obj\Debug\Data.dll
+C:\Users\Eduar\Documents\GitHub\StudentApp\Data\obj\Debug\Data.pdb
