@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
 
 namespace Logica.Libreria
@@ -64,6 +65,11 @@ namespace Logica.Libreria
             {
                 e.Handled = true;
             }
+        }
+
+        public bool ComprobarFormatoEmail(string email)
+        {
+            return new EmailAddressAttribute().IsValid(email);
         }
     }
 }

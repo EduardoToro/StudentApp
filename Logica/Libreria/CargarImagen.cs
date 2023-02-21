@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace Logica.Libreria
 {
@@ -15,6 +16,12 @@ namespace Logica.Libreria
             {
                 pictureBox.ImageLocation = fd.FileName;
             }
+        }
+
+        public byte[] imagenByte(Image img)
+        {
+            var converterImg = new ImageConverter();
+            return (byte[])converterImg.ConvertTo(img, typeof(byte[]));
         }
     }
 }

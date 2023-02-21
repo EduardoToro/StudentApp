@@ -24,8 +24,10 @@ namespace EstudiantesApp
             listaLabel.Add(labelNombre);
             listaLabel.Add(labelApellido);
             listaLabel.Add(labelEmail);
+
+            Object[] objetos = { pictureBoxImage };
             
-            _estudiantes = new Estudiantes(listaTextBox, listaLabel);
+            _estudiantes = new Estudiantes(listaTextBox, listaLabel, objetos);
         }
 
         private void pictureBoxImage_Click(object sender, EventArgs e)
