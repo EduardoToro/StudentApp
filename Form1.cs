@@ -19,7 +19,13 @@ namespace EstudiantesApp
             listaTextBox.Add(textBoxApellido);
             listaTextBox.Add(textBoxEmail);
 
-            _estudiantes = new Estudiantes(listaTextBox);
+            var listaLabel = new List<Label>();
+            listaLabel.Add(labelId);
+            listaLabel.Add(labelNombre);
+            listaLabel.Add(labelApellido);
+            listaLabel.Add(labelEmail);
+            
+            _estudiantes = new Estudiantes(listaTextBox, listaLabel);
         }
 
         private void pictureBoxImage_Click(object sender, EventArgs e)
@@ -109,9 +115,9 @@ namespace EstudiantesApp
             }
         }
 
-        private void textBoxEmail_KeyPress(object sender, KeyPressEventArgs e)
+        private void buttonAgregar_MouseClick(object sender, MouseEventArgs e)
         {
-            throw new System.NotImplementedException();
+            _estudiantes.Registrar();
         }
     }
 }

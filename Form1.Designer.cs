@@ -165,6 +165,7 @@
             this.buttonAgregar.Size = new System.Drawing.Size(106, 51);
             this.buttonAgregar.TabIndex = 5;
             this.buttonAgregar.UseVisualStyleBackColor = false;
+            this.buttonAgregar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonAgregar_MouseClick);
             // 
             // labelEmail
             // 
@@ -185,7 +186,6 @@
             this.textBoxEmail.Size = new System.Drawing.Size(186, 26);
             this.textBoxEmail.TabIndex = 4;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
-            this.textBoxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEmail_KeyPress);
             // 
             // labelApellido
             // 
