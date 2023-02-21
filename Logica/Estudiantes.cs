@@ -2,7 +2,7 @@
 
 namespace Logica
 {
-    public class Estudiantes : CargarImagen
+    public class Estudiantes : Librerias
     {
         
     }

@@ -15,7 +15,7 @@ namespace EstudiantesApp
 
         private void pictureBoxImage_Click(object sender, EventArgs e)
         {
-            _estudiantes.CargarImagenes(pictureBoxImage);
+            _estudiantes.cargarImagen.CargarImagenes(pictureBoxImage);
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace EstudiantesApp
 
         private void textBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            throw new System.NotImplementedException();
+            _estudiantes.eventoTextBox.textKeyPress(e);
         }
 
         private void textBoxApellido_TextChanged(object sender, EventArgs e)
