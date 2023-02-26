@@ -3,20 +3,16 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Logica;
-using Logica.Libreria;
 
 namespace EstudiantesApp
 {
     public partial class Form1 : Form
     {
         private Estudiantes _estudiantes;
-        private Librerias librerias; 
         public Form1()
         {
             InitializeComponent();
 
-            librerias = new Librerias();
-            
             var listaTextBox = new List<TextBox>();
             listaTextBox.Add(textBoxId);
             listaTextBox.Add(textBoxNombre);
@@ -36,7 +32,7 @@ namespace EstudiantesApp
 
         private void pictureBoxImage_Click(object sender, EventArgs e)
         {
-            librerias.cargarImagen.CargarImagenes(pictureBoxImage);
+            _estudiantes.cargarImagen.CargarImagenes(pictureBoxImage);
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -69,7 +65,7 @@ namespace EstudiantesApp
 
         private void textBoxId_KeyPress(object sender, KeyPressEventArgs e)
         {
-            librerias.eventoTextBox.numberKeyPress(e);
+            _estudiantes.eventoTextBox.numberKeyPress(e);
         }
 
         private void textBoxNombre_TextChanged(object sender, EventArgs e)
@@ -87,7 +83,7 @@ namespace EstudiantesApp
 
         private void textBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            librerias.eventoTextBox.textKeyPress(e);
+            _estudiantes.eventoTextBox.textKeyPress(e);
         }
 
         private void textBoxApellido_TextChanged(object sender, EventArgs e)
@@ -105,7 +101,7 @@ namespace EstudiantesApp
 
         private void textBoxApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            librerias.eventoTextBox.textKeyPress(e);
+            _estudiantes.eventoTextBox.textKeyPress(e);
         }
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)

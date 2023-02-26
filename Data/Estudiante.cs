@@ -10,5 +10,6 @@ namespace Data
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string email{ get; set; }
+        public byte[] image{ get; set; }
     }
 }

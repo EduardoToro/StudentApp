@@ -4,11 +4,8 @@ namespace Data
 {
     public class Conexion : DataConnection
     {
-        public Conexion() : base("APPESTUDIANTES1") { }
-        
-        public ITable<Estudiante> _Estudiante
-        {
-            get { return GetTable<Estudiante>(); }
-        }
+        public Conexion() : base("APPESTUDIANTES2") { }
+
+        public ITable<Estudiante> _Estudiante => this.GetTable<Estudiante>();
     }
 }

@@ -1,25 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Net.Mime;
 using System.Windows.Forms;
-using Data;
 using LinqToDB;
 using Logica.Libreria;
 
 namespace Logica
 {
-    public class Estudiantes : Conexion
+    public class Estudiantes : Librerias
     {
         private List<TextBox> listaTextBox;
         private List<Label> listaLabel;
         private PictureBox image;
-        private Librerias librerias; 
         public Estudiantes(List<TextBox> listaTextBox, List<Label> listaLabel, object[] objetos)
         {
             this.listaTextBox = listaTextBox;
             this.listaLabel = listaLabel;
             image = (PictureBox)objetos[0];
-            librerias = new Librerias();
         }
 
         public void Registrar()
@@ -56,19 +52,15 @@ namespace Logica
                         }
                         else
                         {
-                            if (librerias.eventoTextBox.ComprobarFormatoEmail(listaTextBox[3].Text))
+                            if (eventoTextBox.ComprobarFormatoEmail(listaTextBox[3].Text))
                             {
-                                var imageArray = librerias.cargarImagen.imagenByte(image.Image);
-                                using (var db = new Conexion())
-                                {
-                                    db.Insert(new Estudiante()
-                                    {
-                                        nid = listaTextBox[0].Text,
-                                        nombre = listaTextBox[1].Text,
-                                        apellido = listaTextBox[2].Text,
-                                        email = listaTextBox[3].Text
-                                    });
-                                }
+                                var imageArray = cargarImagen.imagenByte(image.Image);
+                                _Estudiante.Value(e => e.nid, listaTextBox[0].Text)
+                                    .Value(e => e.nombre, listaTextBox[1].Text)
+                                    .Value(e => e.apellido, listaTextBox[2].Text)
+                                    .Value(e => e.email, listaTextBox[3].Text)
+                                    .Value(e => e.image, imageArray)
+                                    .Insert();
                             }
                             else
                             {
