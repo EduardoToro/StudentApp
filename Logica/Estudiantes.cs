@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using LinqToDB;
@@ -54,13 +55,7 @@ namespace Logica
                         {
                             if (eventoTextBox.ComprobarFormatoEmail(listaTextBox[3].Text))
                             {
-                                var imageArray = cargarImagen.imagenByte(image.Image);
-                                _Estudiante.Value(e => e.nid, listaTextBox[0].Text)
-                                    .Value(e => e.nombre, listaTextBox[1].Text)
-                                    .Value(e => e.apellido, listaTextBox[2].Text)
-                                    .Value(e => e.email, listaTextBox[3].Text)
-                                    .Value(e => e.image, imageArray)
-                                    .Insert();
+                                
                             }
                             else
                             {
@@ -71,6 +66,31 @@ namespace Logica
                         }
                     }
                 }
+            }
+        }
+
+        private void GuardarEstudiante()
+        {
+            //Inicia el proceso de transacción
+            BeginTransactionAsync(); 
+            try
+            {
+                var imageArray = cargarImagen.imagenByte(image.Image);
+                                    
+                _Estudiante.Value(e => e.nid, listaTextBox[0].Text)
+                    .Value(e => e.nombre, listaTextBox[1].Text)
+                    .Value(e => e.apellido, listaTextBox[2].Text)
+                    .Value(e => e.email, listaTextBox[3].Text)
+                    .Value(e => e.image, imageArray)
+                    .Insert();
+                                    
+                //Permite que la transacción se ejecute
+                CommitTransaction();
+            }
+            catch (Exception)
+            {
+                //Si llega a fallar el método, no se inserta la información
+                RollbackTransaction();
             }
         }
     }
