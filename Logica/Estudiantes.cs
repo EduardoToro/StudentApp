@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using LinqToDB;
 using Logica.Libreria;
@@ -55,7 +56,17 @@ namespace Logica
                         {
                             if (eventoTextBox.ComprobarFormatoEmail(listaTextBox[3].Text))
                             {
-                                
+                                var usuario = _Estudiante.Where(u => u.email.Equals(listaTextBox[3].Text)).ToList();
+                                if (usuario.Count().Equals(0))
+                                {
+                                    
+                                }
+                                else
+                                {
+                                    listaTextBox[3].Text = "Email ya registrado"; 
+                                    listaTextBox[3].ForeColor = Color.Red;
+                                    listaTextBox[3].Focus();
+                                }
                             }
                             else
                             {
