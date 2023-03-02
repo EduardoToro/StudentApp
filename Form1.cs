@@ -25,7 +25,7 @@ namespace EstudiantesApp
             listaLabel.Add(labelApellido);
             listaLabel.Add(labelEmail);
 
-            Object[] objetos = { pictureBoxImage };
+            Object[] objetos = { pictureBoxImage, Properties.Resources.persona, dataGridView1 };
             
             _estudiantes = new Estudiantes(listaTextBox, listaLabel, objetos);
         }

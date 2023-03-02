@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Data;
 using LinqToDB;
 using Logica.Libreria;
 
@@ -13,11 +14,16 @@ namespace Logica
         private List<TextBox> listaTextBox;
         private List<Label> listaLabel;
         private PictureBox image;
+        private Bitmap _imageBitmap;
+        private DataGridView _dataGridView;
         public Estudiantes(List<TextBox> listaTextBox, List<Label> listaLabel, object[] objetos)
         {
             this.listaTextBox = listaTextBox;
             this.listaLabel = listaLabel;
             image = (PictureBox)objetos[0];
+            _imageBitmap = (Bitmap)objetos[1];
+            _dataGridView = (DataGridView)objetos[2]; 
+            Reestablecer();
         }
 
         public void Registrar()
@@ -59,12 +65,12 @@ namespace Logica
                                 var usuario = _Estudiante.Where(u => u.email.Equals(listaTextBox[3].Text)).ToList();
                                 if (usuario.Count().Equals(0))
                                 {
-                                    
+                                    GuardarEstudiante();
                                 }
                                 else
                                 {
-                                    listaTextBox[3].Text = "Email ya registrado"; 
-                                    listaTextBox[3].ForeColor = Color.Red;
+                                    listaLabel[3].Text = "Email ya registrado"; 
+                                    listaLabel[3].ForeColor = Color.Red;
                                     listaTextBox[3].Focus();
                                 }
                             }
@@ -97,12 +103,48 @@ namespace Logica
                                     
                 //Permite que la transacción se ejecute
                 CommitTransaction();
+                
+                Reestablecer();
             }
             catch (Exception)
             {
                 //Si llega a fallar el método, no se inserta la información
                 RollbackTransaction();
             }
+        }
+
+        private int _numPagina = 1;
+        private int _regPorPagina = 2;
+        private void BuscarEstudiante(string campo)
+        {
+            List<Estudiante> query = new List<Estudiante>();
+            //Para crear paginador
+            int inicio = (_numPagina - 1) * _regPorPagina;
+            if (campo.Equals(""))
+            {
+                query = _Estudiante.ToList();
+            }
+            else
+            {
+                
+            }
+        }
+
+        private void Reestablecer()
+        {
+            image.Image = _imageBitmap;
+            listaLabel[0].Text = "Nid"; 
+            listaLabel[1].Text = "Nombre";
+            listaLabel[2].Text = "Apellido";
+            listaLabel[3].Text = "Email";
+            listaLabel[0].ForeColor = Color.LightSlateGray;
+            listaLabel[1].ForeColor = Color.LightSlateGray;
+            listaLabel[2].ForeColor = Color.LightSlateGray;
+            listaLabel[3].ForeColor = Color.LightSlateGray;
+            listaTextBox[0].Text = "";
+            listaTextBox[1].Text = "";
+            listaTextBox[2].Text = "";
+            listaTextBox[3].Text = "";
         }
     }
 }
