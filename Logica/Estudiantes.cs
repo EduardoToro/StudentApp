@@ -115,7 +115,7 @@ namespace Logica
 
         private int _numPagina = 1;
         private int _regPorPagina = 2;
-        private void BuscarEstudiante(string campo)
+        public void BuscarEstudiante(string campo)
         {
             List<Estudiante> query = new List<Estudiante>();
             //Para crear paginador
@@ -140,6 +140,23 @@ namespace Logica
                     c.apellido,
                     c.email
                 }).Skip(inicio).Take(_regPorPagina).ToList();
+                
+                //Ocultar una columna
+                _dataGridView.Columns[0].Visible = false;
+                
+                //Estilo a las columnas
+                _dataGridView.Columns[1].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                _dataGridView.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            }
+            else
+            {
+                _dataGridView.DataSource = query.Select(c => new
+                {
+                    c.nid,
+                    c.nombre,
+                    c.apellido,
+                    c.email
+                }).ToList();
             }
         }
 

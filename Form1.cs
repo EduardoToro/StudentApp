@@ -121,5 +121,10 @@ namespace EstudiantesApp
         {
             _estudiantes.Registrar();
         }
+
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            _estudiantes.BuscarEstudiante(textBoxBuscar.Text);
+        }
     }
 }
