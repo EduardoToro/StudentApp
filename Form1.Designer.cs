@@ -55,6 +55,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonPrimero = new System.Windows.Forms.Button();
+            this.buttonAnterior = new System.Windows.Forms.Button();
+            this.buttonSiguiente = new System.Windows.Forms.Button();
+            this.buttonUltimo = new System.Windows.Forms.Button();
+            this.labelPaginas = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -63,6 +69,7 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -293,6 +300,12 @@
             this.groupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Dialog;
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.numericUpDown1);
+            this.groupBox3.Controls.Add(this.labelPaginas);
+            this.groupBox3.Controls.Add(this.buttonUltimo);
+            this.groupBox3.Controls.Add(this.buttonSiguiente);
+            this.groupBox3.Controls.Add(this.buttonAnterior);
+            this.groupBox3.Controls.Add(this.buttonPrimero);
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Location = new System.Drawing.Point(478, 232);
@@ -366,7 +379,7 @@
             this.textBoxBuscar.Multiline = true;
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(329, 66);
-            this.textBoxBuscar.TabIndex = 8;
+            this.textBoxBuscar.TabIndex = 15;
             this.textBoxBuscar.TextChanged += new System.EventHandler(this.textBoxBuscar_TextChanged);
             // 
             // label2
@@ -378,6 +391,89 @@
             this.label2.Size = new System.Drawing.Size(100, 42);
             this.label2.TabIndex = 0;
             this.label2.Text = "Buscar";
+            // 
+            // buttonPrimero
+            // 
+            this.buttonPrimero.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.buttonPrimero.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPrimero.FlatAppearance.BorderSize = 0;
+            this.buttonPrimero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonPrimero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonPrimero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrimero.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrimero.Image = global::EstudiantesApp.Properties.Resources.left_arrow_1_;
+            this.buttonPrimero.Location = new System.Drawing.Point(176, 418);
+            this.buttonPrimero.Name = "buttonPrimero";
+            this.buttonPrimero.Size = new System.Drawing.Size(106, 51);
+            this.buttonPrimero.TabIndex = 6;
+            this.buttonPrimero.UseVisualStyleBackColor = false;
+            // 
+            // buttonAnterior
+            // 
+            this.buttonAnterior.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.buttonAnterior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAnterior.FlatAppearance.BorderSize = 0;
+            this.buttonAnterior.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAnterior.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnterior.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnterior.Image = global::EstudiantesApp.Properties.Resources.left_chevron;
+            this.buttonAnterior.Location = new System.Drawing.Point(297, 418);
+            this.buttonAnterior.Name = "buttonAnterior";
+            this.buttonAnterior.Size = new System.Drawing.Size(106, 51);
+            this.buttonAnterior.TabIndex = 7;
+            this.buttonAnterior.UseVisualStyleBackColor = false;
+            // 
+            // buttonSiguiente
+            // 
+            this.buttonSiguiente.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.buttonSiguiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSiguiente.FlatAppearance.BorderSize = 0;
+            this.buttonSiguiente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSiguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSiguiente.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSiguiente.Image = global::EstudiantesApp.Properties.Resources.right;
+            this.buttonSiguiente.Location = new System.Drawing.Point(423, 418);
+            this.buttonSiguiente.Name = "buttonSiguiente";
+            this.buttonSiguiente.Size = new System.Drawing.Size(106, 51);
+            this.buttonSiguiente.TabIndex = 8;
+            this.buttonSiguiente.UseVisualStyleBackColor = false;
+            // 
+            // buttonUltimo
+            // 
+            this.buttonUltimo.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.buttonUltimo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonUltimo.FlatAppearance.BorderSize = 0;
+            this.buttonUltimo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonUltimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUltimo.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUltimo.Image = global::EstudiantesApp.Properties.Resources.right_1_;
+            this.buttonUltimo.Location = new System.Drawing.Point(553, 418);
+            this.buttonUltimo.Name = "buttonUltimo";
+            this.buttonUltimo.Size = new System.Drawing.Size(106, 51);
+            this.buttonUltimo.TabIndex = 9;
+            this.buttonUltimo.UseVisualStyleBackColor = false;
+            // 
+            // labelPaginas
+            // 
+            this.labelPaginas.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPaginas.ForeColor = System.Drawing.Color.Black;
+            this.labelPaginas.Location = new System.Drawing.Point(374, 368);
+            this.labelPaginas.Name = "labelPaginas";
+            this.labelPaginas.Size = new System.Drawing.Size(100, 42);
+            this.labelPaginas.TabIndex = 10;
+            this.labelPaginas.Text = "Pagina";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(24, 443);
+            this.numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(61, 26);
+            this.numericUpDown1.TabIndex = 11;
+            this.numericUpDown1.Value = new decimal(new int[] { 5, 0, 0, 0 });
             // 
             // Form1
             // 
@@ -401,8 +497,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+
+        private System.Windows.Forms.Button buttonPrimero;
+        private System.Windows.Forms.Button buttonAnterior;
+        private System.Windows.Forms.Button buttonSiguiente;
+        private System.Windows.Forms.Button buttonUltimo;
 
         private System.Windows.Forms.DataGridView dataGridView1;
 
@@ -427,7 +531,7 @@
         private System.Windows.Forms.TextBox textBoxBuscar;
 
         private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelPaginas;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label8;

@@ -16,13 +16,15 @@ namespace Logica
         private PictureBox image;
         private Bitmap _imageBitmap;
         private DataGridView _dataGridView;
+        private NumericUpDown _numericUpDown;
         public Estudiantes(List<TextBox> listaTextBox, List<Label> listaLabel, object[] objetos)
         {
             this.listaTextBox = listaTextBox;
             this.listaLabel = listaLabel;
             image = (PictureBox)objetos[0];
             _imageBitmap = (Bitmap)objetos[1];
-            _dataGridView = (DataGridView)objetos[2]; 
+            _dataGridView = (DataGridView)objetos[2];
+            _numericUpDown = (NumericUpDown)objetos[3]; 
             Reestablecer();
         }
 
