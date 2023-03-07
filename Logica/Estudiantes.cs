@@ -73,9 +73,16 @@ namespace Logica
                                 }
                                 else
                                 {
-                                    listaLabel[3].Text = "Email ya registrado"; 
-                                    listaLabel[3].ForeColor = Color.Red;
-                                    listaTextBox[3].Focus();
+                                    if (usuario[0].id.Equals(_idEstudiante))
+                                    {
+                                        GuardarEstudiante();
+                                    }
+                                    else
+                                    {
+                                        listaLabel[3].Text = "Email ya registrado"; 
+                                        listaLabel[3].ForeColor = Color.Red;
+                                        listaTextBox[3].Focus();
+                                    }
                                 }
                             }
                             else
@@ -97,17 +104,28 @@ namespace Logica
             try
             {
                 var imageArray = cargarImagen.imagenByte(image.Image);
-                                    
-                _Estudiante.Value(e => e.nid, listaTextBox[0].Text)
-                    .Value(e => e.nombre, listaTextBox[1].Text)
-                    .Value(e => e.apellido, listaTextBox[2].Text)
-                    .Value(e => e.email, listaTextBox[3].Text)
-                    .Value(e => e.image, imageArray)
-                    .Insert();
-                                    
+                switch (_accion)
+                {
+                    case "Insertar":
+                        _Estudiante.Value(e => e.nid, listaTextBox[0].Text)
+                            .Value(e => e.nombre, listaTextBox[1].Text)
+                            .Value(e => e.apellido, listaTextBox[2].Text)
+                            .Value(e => e.email, listaTextBox[3].Text)
+                            .Value(e => e.image, imageArray)
+                            .Insert();
+                        break;
+                    case "Actualizar":
+                        _Estudiante.Where(u => u.id.Equals(_idEstudiante))
+                            .Set(e => e.nid, listaTextBox[0].Text)
+                            .Set(e => e.nombre, listaTextBox[1].Text)
+                            .Set(e => e.apellido, listaTextBox[2].Text)
+                            .Set(e => e.email, listaTextBox[3].Text)
+                            .Set(e => e.image, imageArray)
+                            .Update();
+                        break;
+                }
                 //Permite que la transacción se ejecute
                 CommitTransaction();
-                
                 Reestablecer();
             }
             catch (Exception)
@@ -222,6 +240,9 @@ namespace Logica
 
         private void Reestablecer()
         {
+            _accion = "Insertar";
+            _numPagina = 1;
+            _idEstudiante = 0;
             image.Image = _imageBitmap;
             listaLabel[0].Text = "Nid"; 
             listaLabel[1].Text = "Nombre";
