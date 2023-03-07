@@ -147,5 +147,10 @@ namespace EstudiantesApp
         {
             _estudiantes.Paginador("Ultimo");
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            _estudiantes.RegistroPaginas();
+        }
     }
 }

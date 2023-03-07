@@ -184,6 +184,18 @@ namespace Logica
             BuscarEstudiante("");
         }
 
+        public void RegistroPaginas()
+        {
+            _numPagina = 1;
+            _regPorPagina = (int)_numericUpDown.Value;
+            var list = _Estudiante.ToList();
+            if (0 < list.Count)
+            {
+                _paginador = new Paginador<Estudiante>(listaEstudiante, listaLabel[4], _regPorPagina);
+                BuscarEstudiante("");
+            }
+        }
+
         private void Reestablecer()
         {
             image.Image = _imageBitmap;
