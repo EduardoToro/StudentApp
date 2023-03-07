@@ -17,7 +17,8 @@ namespace Logica
         private Bitmap _imageBitmap;
         private DataGridView _dataGridView;
         private NumericUpDown _numericUpDown;
-        private Paginador<Estudiante> _paginador; 
+        private Paginador<Estudiante> _paginador;
+        private string _accion = "Insertar";
         public Estudiantes(List<TextBox> listaTextBox, List<Label> listaLabel, object[] objetos)
         {
             this.listaTextBox = listaTextBox;
@@ -141,11 +142,13 @@ namespace Logica
                     c.nid,
                     c.nombre,
                     c.apellido,
-                    c.email
+                    c.email,
+                    c.image
                 }).Skip(inicio).Take(_regPorPagina).ToList();
                 
                 //Ocultar una columna
                 _dataGridView.Columns[0].Visible = false;
+                _dataGridView.Columns[5].Visible = false;
                 
                 //Estilo a las columnas
                 _dataGridView.Columns[1].DefaultCellStyle.BackColor = Color.WhiteSmoke;
@@ -160,6 +163,27 @@ namespace Logica
                     c.apellido,
                     c.email
                 }).ToList();
+            }
+        }
+
+        private int _idEstudiante = 0;
+
+        public void ObtenerEstudiante()
+        {
+            _accion = "Actualizar";
+            _idEstudiante = Convert.ToInt16(_dataGridView.CurrentRow.Cells[0].Value);
+            listaTextBox[0].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[1].Value);
+            listaTextBox[1].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[2].Value);
+            listaTextBox[2].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[3].Value);
+            listaTextBox[3].Text = Convert.ToString(_dataGridView.CurrentRow.Cells[4].Value);
+            try
+            {
+                byte[] arrayImage = (byte[])_dataGridView.CurrentRow.Cells[5].Value;
+                image.Image = cargarImagen.ByteArrayToImage(arrayImage);
+            }
+            catch (Exception)
+            {
+                image.Image = _imageBitmap;
             }
         }
 

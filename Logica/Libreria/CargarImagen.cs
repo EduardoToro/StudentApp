@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Logica.Libreria
@@ -22,6 +23,12 @@ namespace Logica.Libreria
         {
             var converterImg = new ImageConverter();
             return (byte[])converterImg.ConvertTo(img, typeof(byte[]));
+        }
+
+        public Image ByteArrayToImage(byte[] byteArray)
+        {
+            MemoryStream ms = new MemoryStream(byteArray);
+            return Image.FromStream(ms);
         }
     }
 }
