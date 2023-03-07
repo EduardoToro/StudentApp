@@ -127,5 +127,25 @@ namespace EstudiantesApp
         {
             _estudiantes.BuscarEstudiante(textBoxBuscar.Text);
         }
+
+        private void buttonPrimero_Click(object sender, EventArgs e)
+        {
+            _estudiantes.Paginador("Primero");
+        }
+
+        private void buttonAnterior_Click(object sender, EventArgs e)
+        {
+            _estudiantes.Paginador("Anterior");
+        }
+
+        private void buttonSiguiente_Click(object sender, EventArgs e)
+        {
+            _estudiantes.Paginador("Siguiente");
+        }
+
+        private void buttonUltimo_Click(object sender, EventArgs e)
+        {
+            _estudiantes.Paginador("Ultimo");
+        }
     }
 }

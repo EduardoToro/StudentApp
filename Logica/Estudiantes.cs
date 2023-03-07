@@ -17,6 +17,7 @@ namespace Logica
         private Bitmap _imageBitmap;
         private DataGridView _dataGridView;
         private NumericUpDown _numericUpDown;
+        private Paginador<Estudiante> _paginador; 
         public Estudiantes(List<TextBox> listaTextBox, List<Label> listaLabel, object[] objetos)
         {
             this.listaTextBox = listaTextBox;
@@ -162,6 +163,27 @@ namespace Logica
             }
         }
 
+        private List<Estudiante> listaEstudiante;
+        public void Paginador(string metodo)
+        {
+            switch (metodo)
+            {
+                case "Primero":
+                    _numPagina = _paginador.PrimeraPag();
+                    break;
+                case "Anterior":
+                    _numPagina = _paginador.AnteriorPag();
+                    break;
+                case "Siguiente":
+                    _numPagina = _paginador.SiguientePag();
+                    break;
+                case "Ultimo":
+                    _numPagina = _paginador.UltimaPag();
+                    break;
+            }
+            BuscarEstudiante("");
+        }
+
         private void Reestablecer()
         {
             image.Image = _imageBitmap;
@@ -177,7 +199,12 @@ namespace Logica
             listaTextBox[1].Text = "";
             listaTextBox[2].Text = "";
             listaTextBox[3].Text = "";
-            
+
+            listaEstudiante = _Estudiante.ToList();
+            if (0 < listaEstudiante.Count)
+            {
+                _paginador = new Paginador<Estudiante>(listaEstudiante, listaLabel[4], _regPorPagina);
+            }
             BuscarEstudiante("");
         }
     }

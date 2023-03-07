@@ -348,6 +348,7 @@
             this.buttonUltimo.Size = new System.Drawing.Size(106, 51);
             this.buttonUltimo.TabIndex = 9;
             this.buttonUltimo.UseVisualStyleBackColor = false;
+            this.buttonUltimo.Click += new System.EventHandler(this.buttonUltimo_Click);
             // 
             // buttonSiguiente
             // 
@@ -364,6 +365,7 @@
             this.buttonSiguiente.Size = new System.Drawing.Size(106, 51);
             this.buttonSiguiente.TabIndex = 8;
             this.buttonSiguiente.UseVisualStyleBackColor = false;
+            this.buttonSiguiente.Click += new System.EventHandler(this.buttonSiguiente_Click);
             // 
             // buttonAnterior
             // 
@@ -380,6 +382,7 @@
             this.buttonAnterior.Size = new System.Drawing.Size(106, 51);
             this.buttonAnterior.TabIndex = 7;
             this.buttonAnterior.UseVisualStyleBackColor = false;
+            this.buttonAnterior.Click += new System.EventHandler(this.buttonAnterior_Click);
             // 
             // buttonPrimero
             // 
@@ -396,6 +399,7 @@
             this.buttonPrimero.Size = new System.Drawing.Size(106, 51);
             this.buttonPrimero.TabIndex = 6;
             this.buttonPrimero.UseVisualStyleBackColor = false;
+            this.buttonPrimero.Click += new System.EventHandler(this.buttonPrimero_Click);
             // 
             // dataGridView1
             // 
