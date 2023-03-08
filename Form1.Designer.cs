@@ -143,6 +143,7 @@
             this.buttonEliminar.Size = new System.Drawing.Size(106, 51);
             this.buttonEliminar.TabIndex = 6;
             this.buttonEliminar.UseVisualStyleBackColor = false;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
             // buttonCancelar
             // 
@@ -159,6 +160,7 @@
             this.buttonCancelar.Size = new System.Drawing.Size(106, 51);
             this.buttonCancelar.TabIndex = 7;
             this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonAgregar
             // 

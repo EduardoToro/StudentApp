@@ -168,5 +168,15 @@ namespace EstudiantesApp
                 _estudiantes.ObtenerEstudiante();
             }
         }
+        
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            _estudiantes.Reestablecer();
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            _estudiantes.Eliminar();
+        }
     }
 }

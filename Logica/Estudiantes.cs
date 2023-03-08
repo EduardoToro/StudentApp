@@ -238,7 +238,24 @@ namespace Logica
             }
         }
 
-        private void Reestablecer()
+        public void Eliminar()
+        {
+            if (_idEstudiante.Equals(0))
+            {
+                MessageBox.Show("Seleccione un estudiante.");
+            }
+            else
+            {
+                if (MessageBox.Show("Estás seguro de eliminar el estudiante?", "Eliminar estudiante",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    _Estudiante.Where(c => c.id.Equals(_idEstudiante)).Delete();
+                    Reestablecer();
+                }
+            }
+        }
+
+        public void Reestablecer()
         {
             _accion = "Insertar";
             _numPagina = 1;
